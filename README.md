@@ -362,24 +362,65 @@ The system utilizes a relational database structure supporting:
 
 ---
 
+---
+
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow the existing code structure and maintain consistency with the project's architecture.
+We welcome contributions from the community! To help maintain code quality and consistency, please follow these guidelines:
+
+### Development Guidelines
+- Follow the existing code structure and naming conventions
+- Maintain consistency with the project's architecture
+- Write clear, descriptive commit messages
+- Test your changes thoroughly before submitting
+- Update documentation as needed
+
+### Contribution Process
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Submit a pull request with a clear description
 
 ---
 
 ## 📄 License
 
-This project is licensed under the terms specified in the LICENSE file.
+This project is licensed under the terms specified in the [LICENSE](LICENSE) file. Please review the license before using or contributing to this project.
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 Project Credits
 
-**Original Developer:** Clint  
-**Repository:** [Cyzo50218/Urdaneta-Legislative-System](https://github.com/Cyzo50218/Urdaneta-Legislative-System)
+### Original Developer
+**Clinton Ikenna N. Ihegoro** (Clint)
+
+### Repository
+🔗 [Cyzo50218/Urdaneta-Legislative-System](https://github.com/Cyzo50218/Urdaneta-Legislative-System)
+
+### Support & Questions
+- **GitHub Issues:** [Report bugs or request features](https://github.com/Cyzo50218/Urdaneta-Legislative-System/issues)
+- **Repository Wiki:** [Documentation and guides](https://github.com/Cyzo50218/Urdaneta-Legislative-System/wiki)
 
 ---
 
-**Last Updated:** April 2026  
-**Version:** 1.0.0
+## 📋 Project Metadata
+
+| Item | Details |
+|------|---------|
+| **Status** | Active Development |
+| **Last Updated** | April 2026 |
+| **Current Version** | 1.0.0 |
+| **License** | [See LICENSE file](LICENSE) |
+| **Primary Language** | PHP 7.4+ |
+| **Database** | MySQL 5.7+ / MariaDB |
+
+---
+
+## 🙏 Acknowledgments
+
+This legislative system was built to serve the community and streamline governmental operations. Special thanks to all contributors and stakeholders who have provided feedback and support.
+
+---
+
+**Made with ❤️ for Legislative Management**
