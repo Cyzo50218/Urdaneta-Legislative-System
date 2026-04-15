@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="/api/js/turn.min.js"></script>
+
+    <style>
+        body {
+            background: #ccc;
+            margin: 0;
+        }
+
+        #magazine {
+            width: 1100px;
+            height: 752px;
+            margin: 20px auto;
+        }
+
+        #magazine .turn-page {
+            background-color: #ccc;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <script>
+        $(function () {
+
+            $('#magazine').turn({
+                display: 'double',
+                acceleration: true,
+                gradients: !$.isTouch,
+                elevation: 50,
+                autoCenter: true,
+            });
+
+            $(window).bind('keydown', function (e) {
+                if (e.keyCode == 37) $('#magazine').turn('previous');
+                else if (e.keyCode == 39) $('#magazine').turn('next');
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

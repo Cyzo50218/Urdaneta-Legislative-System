@@ -1,0 +1,17 @@
+{
+    "name": "myfav/legislative_system",
+    "autoload": {
+        "psr-4": {
+            "Myfav\\LegislativeSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Cyzo50218",
+            "email": "myfavoritemappingswar@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

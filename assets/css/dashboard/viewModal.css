@@ -1,0 +1,429 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.record-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 2000;
+}
+
+.record-modal-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.record-modal-dialog {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 30;
+  margin-left: 350px;
+  margin-right: 350px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.record-modal-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(to right, #ecfdf3, #eff6ff);
+}
+
+.record-modal-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.record-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.record-modal-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-code-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.record-modal-close {
+  border: none;
+  background: #ffffff;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.record-modal-close:hover {
+  background: var(--gray-100);
+}
+
+.record-modal-close i {
+  width: 16px;
+  height: 16px;
+}
+
+/* Body */
+.record-modal-body {
+  padding: 16px 20px 18px;
+  overflow-y: auto;
+}
+
+.record-section {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.record-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.record-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #111827;
+}
+
+.record-section-subtitle {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.record-legislation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem 1rem;
+}
+
+.record-detail {
+  background: #f9fafb;
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+}
+
+.record-detail--full {
+  grid-column: 1 / -1;
+}
+
+.record-detail-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.record-detail-value {
+  font-size: 0.85rem;
+  color: #111827;
+}
+
+.text-muted {
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.record-attachments-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+}
+.record-btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Details grid */
+.record-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px 24px;
+  font-size: 13px;
+}
+
+.record-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-detail-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+  margin-bottom: 2px;
+}
+
+.record-detail-value {
+  color: var(--gray-800);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* Long text / description */
+.record-detail--full {
+  grid-column: 1 / -1;
+}
+
+/* Footer */
+.record-modal-footer {
+  padding: 10px 20px 14px;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+}
+
+.record-footer-spacer {
+  flex: 1;
+}
+
+.record-btn-primary,
+.record-btn-secondary {
+  border-radius: 999px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.record-btn-primary,
+.record-btn-secondary {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  display: inline-flex;
+}
+
+
+.record-btn-primary {
+  background: var(--primary-green);
+  color: #ffffff;
+}
+
+.record-btn-primary:hover {
+  background: var(--primary-green-dark);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.record-btn-secondary {
+  background: #ffffff;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-200);
+}
+
+.record-btn-secondary:hover {
+  background: var(--gray-50);
+}
+
+.record-btn-primary i,
+.record-btn-secondary i {
+  width: 14px;
+  height: 14px;
+}
+
+.record-modal-footer {
+  padding: 10px 20px 14px;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f9fafb;
+}
+
+.record-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.record-footer-actions .record-btn-tool {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--gray-200);
+  background: #ffffff;
+  color: var(--gray-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.record-footer-actions .record-btn-tool i {
+  width: 14px;
+  height: 14px;
+}
+
+.record-footer-actions .record-btn-tool:hover {
+  background: var(--gray-50);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .record-modal-footer {
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 8px;
+  }
+
+  .record-footer-spacer {
+    display: none;
+  }
+
+  .record-btn-primary,
+  .record-btn-secondary {
+    width: auto;
+    flex: 0 0 auto;
+    align-self: flex-end; 
+  }
+}
+
+
+@media (max-width: 640px) {
+  .record-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-record-modal-dialog {
+    max-height: 90vh;          
+    display: flex;
+    flex-direction: column;
+}
+
+.add-record-modal-dialog .record-modal-body {
+    overflow-y: auto;
+    padding-right: 8px;        
+    max-height: calc(90vh - 160px); 
+}
+.btn-add {
+    margin-top: 6px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.btn-add i {
+    width: 14px;
+    height: 14px;
+}
+.btn-remove {
+    border-radius: 6px;
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
+.record-detail-value .detail-item {
+    margin-bottom: 2px;
+    line-height: 1.4;
+    display: block;
+    color: var(--gray-800);
+    font-weight: 500;
+}
+
+.record-detail-value {
+    white-space: normal;
+}
+
+.small-modal {
+    max-width: 420px;
+}
+
+.record-btn-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #b91c1c;
+    color: #f9fafb;
+    cursor: pointer;
+}
+
+.record-btn-danger:hover {
+    background-color: #991b1b;
+}
+
+
+@media (max-width: 480px) {
+  .record-modal-dialog {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 640px) and (min-width: 481px) {
+  .record-modal-dialog {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 768px) and (min-width: 641px) {
+  .record-modal-dialog {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .record-modal-dialog {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}

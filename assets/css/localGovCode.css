@@ -1,0 +1,132 @@
+.codebook-full-wrapper {
+  display: flex;
+  justify-content: flex-start !important;
+}
+#magazine {
+  font-family: "Merriweather", "Georgia", serif;
+  width: 800px;
+  height: 550px;
+  line-height: 1.55;
+  color: #222;
+  letter-spacing: 0.3px;
+  margin-left: 0 !important;
+  transform: none !important;
+  margin-bottom: 30px;
+}
+/* ---------- MOBILE VIEW ---------- */
+@media (max-width: 900px) {
+  #magazine {
+    width: 90vw !important;
+    height: 65vh !important;
+  }
+
+  #magazine > div {
+    font-size: 13px !important;
+  }
+}
+
+/* ---------- SMALL PHONE ---------- */
+@media (max-width: 600px) {
+  #magazine {
+    width: 95vw !important;
+    height: 50vh !important;
+  }
+
+  #magazine > div > div {
+    font-size: 13px !important;
+  }
+}
+
+#magazine > div > div {
+  font-family: "Merriweather", "Georgia", serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.legal-content h2 {
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.legal-content p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 12px;
+  text-indent: 30px;
+}
+
+.legal-content h2 {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px !important;
+  color: #000 !important;
+  border-bottom: 1px solid #33333337;
+  padding-bottom: 8px;
+}
+#magazine .legal-content ul,
+#magazine .legal-content ul[style] {
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  margin: 10px 0 10px 25px !important;
+  padding-left: 15px !important;
+  display: block !important;
+}
+
+#magazine .legal-content ol,
+#magazine .legal-content ol[style] {
+  list-style-type: decimal !important;
+  list-style-position: outside !important;
+  margin: 10px 0 10px 25px !important;
+  padding-left: 15px !important;
+  display: block !important;
+}
+
+#magazine .legal-content li,
+#magazine .legal-content li[style] {
+  display: list-item !important;
+  list-item-type: inherit !important;
+  margin-bottom: 5px !important;
+  text-indent: 0 !important;
+  text-align: left !important;
+}
+.legal-content {
+  overflow: visible !important;
+}
+
+#magazine .dynamic-page {
+  box-sizing: border-box;
+  background: #fdfdfd;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(255, 255, 255, 0) 5%
+  ); /* Spine shadow */
+}
+
+#magazine > div {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 0 0 40px rgba(0, 0, 0, 0.05),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+#magazine .even {
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(255, 255, 255, 0) 5%
+  );
+}
+
+#magazine .turn-page {
+  background-color: #ccc;
+  background-size: 100% 100%;
+}

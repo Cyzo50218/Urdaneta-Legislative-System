@@ -1,0 +1,122 @@
+.hyperlink-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1600;
+}
+
+.hyperlink-modal-backdrop.show {
+  display: flex;
+}
+.hyperlink-modal-dialog {
+  background: #ffffff;
+  color: #000000;
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.hyperlink-modal-header {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-200);
+  background: linear-gradient(to right, #ecfdf3, #eff6ff);
+  color: var(--gray-500);
+}
+
+.hyperlink-modal-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.hyperlink-modal-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 999px;
+  color: #56595d;
+}
+
+.hyperlink-modal-close:hover {
+  background: rgba(168, 174, 185, 0.15);
+  color: rgb(136, 139, 143);
+}
+
+/* Body */
+.hyperlink-modal-body {
+  padding: 16px 18px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hyperlink-modal-label {
+  font-size: 13px;
+  color: #3b3f46;
+}
+
+.hyperlink-modal-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+.hyperlink-modal-input:focus {
+  border-color: #22c55e;
+  outline: none;
+}
+
+/* Footer similar to .grid-setup-footer */
+.hyperlink-modal-footer {
+  padding: 10px 18px 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--gray-200);
+  background: #f9fafb;
+}
+
+/* Buttons styled like grid-setup-btn */
+.hyperlink-btn {
+  font-size: 13px;
+  border-radius: 999px;
+  padding: 6px 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.hyperlink-btn.ghost {
+  background: transparent;
+  color: #121212;
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+.hyperlink-btn.ghost:hover {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.hyperlink-btn.primary {
+  background: var(--primary-green);
+  color: #ffffff;
+  font-weight: 600;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.hyperlink-btn.primary:hover {
+  background: var(--primary-green-dark);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}

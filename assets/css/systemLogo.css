@@ -1,0 +1,49 @@
+.ph-seal {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--ph-blue) 0%,
+    var(--ph-blue-light) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 56, 168, 0.3);
+}
+
+.ph-seal::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--ph-yellow);
+  border-radius: 50%;
+}
+
+.ph-seal-smaller {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    var(--ph-blue) 0%,
+    var(--ph-blue-light) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0, 56, 168, 0.25);
+}
+
+.ph-seal-smaller::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--ph-yellow);
+  border-radius: 50%;
+}

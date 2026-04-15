@@ -1,0 +1,39 @@
+/* ============================================================ */
+/* TABS */
+/* ============================================================ */
+.tabs {
+  margin-bottom: 1.5rem;
+}
+
+.tab-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background: rgba(239, 246, 255, 0.5);
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+}
+
+.tab-button {
+  padding: 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  color: var(--ph-blue);
+}
+
+.tab-button.active {
+  background: var(--ph-blue);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

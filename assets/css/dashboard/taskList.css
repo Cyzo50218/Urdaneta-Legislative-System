@@ -1,0 +1,57 @@
+.btn-new-task {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green),
+    var(--primary-green-light)
+  );
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(5, 150, 105, 0.2);
+  white-space: nowrap;
+}
+
+.btn-new-task:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green-dark),
+    var(--primary-green)
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.3);
+}
+
+.btn-new-task:active {
+  transform: translateY(0);
+}
+
+#adminTaskSystem .space-y-2 > div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.dragging {
+    opacity: 0.4;
+    scale: 1;
+    background-color: #f0fdf4 !important; 
+    border: 2px dashed #10b981 !important;
+    cursor: grabbing !important;
+}
+
+.drag-over {
+    border-top: 4px solid #10b981 !important;
+    padding-top: 10px !important;
+}
+
+.cursor-grab {
+    pointer-events: auto !important;
+    user-select: none;
+    touch-action: none;
+}

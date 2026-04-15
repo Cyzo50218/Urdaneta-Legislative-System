@@ -1,0 +1,86 @@
+/* Floating modal animation */
+@keyframes floatUpDown {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.calendar-event-modal {
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  position: fixed;
+  background: #fff;
+  border-radius: 14px;
+  filter: drop-shadow(0 8px 15px rgba(0,0,0,0.25));
+  padding: 16px 20px;
+  min-width: 260px;
+  font-family: system-ui, sans-serif;
+  color: #111;
+  z-index: 9999;
+  animation: floatUpDown 1.5s ease-in-out infinite alternate;
+  pointer-events: auto;
+  overflow: visible;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.calendar-event-modal::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 16px;  
+    height: 16px;
+    background: #fff;
+    transform: translateX(-50%) rotate(45deg); 
+    z-index: -1; 
+}
+.calendar-event-modal:not(.flipped)::after {
+    top: -8px;
+}
+.calendar-event-modal.flipped::after {
+    bottom: -8px;
+}
+
+.calendar-event-modal:hover {
+  opacity: 0.95;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* --- EVENT CONTENT --- */
+.calendar-event-modal .event-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-event-modal .event-item .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.calendar-event-modal .event-item .text {
+  font-size: 18px;
+}
+
+.calendar-event-modal .event-item .text .title {
+  font-weight: 600;
+  color: #111;
+}
+
+.calendar-event-modal .event-item .text .time-location {
+  font-size: 16px;
+  color: #555;
+}
+
+.calendar-event-modal .close-modal-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary-green);
+  font-size: 14px;
+  margin-top: 6px;
+  float: right;
+}
