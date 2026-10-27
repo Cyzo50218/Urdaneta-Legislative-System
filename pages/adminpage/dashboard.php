@@ -208,17 +208,17 @@ require('../../api/connections/connection.php');
     <script src="/../../assets/js/dashboard/calendar/calendarEventModal.js"></script>
     <script type="module" src="/../../assets/js/dashboard/profile/profileInfo.js"></script>
     <script src="/../../assets/js/dashboard/menuDropdown.js"></script>
-    <script src="/../../api/js/fetchMyAssignedResolutionCount.js"></script>
-    <script src="/../../api/js/fetchMyAssignedOrdinanceCount.js"></script>
-    <script src="/../../api/js/fetchUpcomingHearings.js"></script>
-    <script src="/../../api/js/loadDashboardDataFast.js"></script>
+    <script src="/assets/js/api/fetchMyAssignedResolutionCount.js"></script>
+    <script src="/assets/js/api/fetchMyAssignedOrdinanceCount.js"></script>
+    <script src="/assets/js/api/fetchUpcomingHearings.js"></script>
+    <script src="/assets/js/api/loadDashboardDataFast.js"></script>
     <script src="/../../assets/js/dashboard/record_modal_features/records_state.js"></script>
 
     <!-- LOADED HELPER -->
     <script src="/../../assets/js/helpers/dateHelpers.js"></script>
 
-    <script src="/../../api/js/tasks/loadTasksList.js"></script>
-    <script src="/../../api/js/fetchMyTasks.js"></script>
+    <script src="/assets/js/api/tasks/loadTasksList.js"></script>
+    <script src="/assets/js/api/fetchMyTasks.js"></script>
 
 
 

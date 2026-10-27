@@ -2,7 +2,7 @@
 <?php include __DIR__ . '/../../partials/_page_head.php'; ?>
 <link rel="stylesheet" href="/../../assets/css/localGovCode.css">
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script src="/api/js/turn.min.js"></script>
+<script src="/assets/js/api/turn.min.js"></script>
 
 <body class="bg-gray-50 min-h-[100svh] flex flex-col">
   <?php include __DIR__ . '/../../partials/navbar.php'; ?>

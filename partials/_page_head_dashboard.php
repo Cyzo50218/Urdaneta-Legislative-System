@@ -37,7 +37,7 @@
 
     <!-- jQuery and turn.js for the Local Gov Code section -->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="/api/js/turn.min.js"></script>
+    <script src="/assets/js/api/turn.min.js"></script>
 
     <!-- LUICIDE ICONS CREATE ICON SAFELY -->
     <script src="https://unpkg.com/lucide@0.464.0/dist/umd/lucide.min.js" defer></script>

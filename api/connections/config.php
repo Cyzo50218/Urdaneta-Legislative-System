@@ -1,25 +1,64 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->safeLoad(); 
+$dotenv->safeLoad();
 
-$dsn_react = sprintf(
+$readEnv = static function (string $name, ?string $default = null): ?string {
+    $value = getenv($name);
+
+    if ($value !== false) {
+        return $value;
+    }
+
+    $value = $_ENV[$name] ?? $_SERVER[$name] ?? $default;
+
+    return is_string($value) ? $value : $default;
+};
+
+$values = [
+    'DB_USER' => $readEnv('DB_USER'),
+    'DB_PASSWORD' => $readEnv('DB_PASSWORD'),
+    'DB_HOST' => $readEnv('DB_HOST'),
+    'DB_NAME' => $readEnv('DB_NAME'),
+];
+
+$missing = [];
+foreach ($values as $name => $value) {
+    if ($value === null || ($name !== 'DB_PASSWORD' && trim($value) === '')) {
+        $missing[] = $name;
+    }
+}
+
+if ($missing !== []) {
+    throw new RuntimeException(
+        'Missing required database environment variables: ' . implode(', ', $missing)
+    );
+}
+
+$charset = $readEnv('DB_CHARSET', 'utf8mb4');
+$port = $readEnv('DB_PORT', '3306');
+$host = $values['DB_HOST'];
+$user = $values['DB_USER'];
+$password = $values['DB_PASSWORD'];
+$dbname = $values['DB_NAME'];
+
+$dsnReact = sprintf(
     '%s:%s@%s/%s?charset=%s',
-    rawurlencode(getenv('DB_USER') ?: $_ENV['DB_USER']),
-    rawurlencode(getenv('DB_PASSWORD') ?: $_ENV['DB_PASSWORD']),
-    rawurlencode(getenv('DB_HOST') ?: $_ENV['DB_HOST']),
-    rawurlencode(getenv('DB_NAME') ?: $_ENV['DB_NAME']),
-    rawurlencode(getenv('DB_CHARSET') ?: $_ENV['DB_CHARSET'])
+    rawurlencode($user),
+    rawurlencode($password),
+    rawurlencode($host),
+    rawurlencode($dbname),
+    rawurlencode($charset)
 );
 
 return [
-    'host'    => getenv('DB_HOST') ?: $_ENV['DB_HOST'],
-    'ipaddress' => getenv('IP_ADDRESS') ?: $_ENV['IP_ADDRESS'],
-    'websocketport' => getenv('IP_WEBSOCKET_PORT') ?: $_ENV['IP_WEBSOCKET_PORT'],
-    'user'    => getenv('DB_USER') ?: $_ENV['DB_USER'],
-    'pass'    => getenv('DB_PASSWORD') ?: $_ENV['DB_PASSWORD'],
-    'dbname'  => getenv('DB_NAME') ?: $_ENV['DB_NAME'],
-    'charset' => getenv('DB_CHARSET') ?: $_ENV['DB_CHARSET'],
-    'port'    => getenv('DB_PORT') ?: $_ENV['DB_PORT'],
-    'dsn_react' => $dsn_react,
+    'host'    => $host,
+    'ipaddress' => $readEnv('IP_ADDRESS', ''),
+    'websocketport' => $readEnv('IP_WEBSOCKET_PORT', ''),
+    'user'    => $user,
+    'pass'    => $password,
+    'dbname'  => $dbname,
+    'charset' => $charset,
+    'port'    => $port,
+    'dsn_react' => $dsnReact,
 ];
